@@ -1,5 +1,6 @@
 package com.edu.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.edu.service.UserService;
 import com.edu.vo.UserInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/queryUserInfo")
-    public UserInfoVo queryUserInfo() {
-        userService.queryUserInfo();
-        return null;
+    public String queryUserInfo() {
+        UserInfoVo userInfoVo = userService.queryUserInfo();
+        return JSON.toJSONString(userInfoVo);
     }
 }

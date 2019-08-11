@@ -2,8 +2,8 @@ server:
   port: 8088
 spring:
   thymeleaf:
-    prefix: /templates/
+    prefix: classpath:/templates/
     suffix: .html
-    mode: HTML
+#    mode: HTML
     encoding: UTF-8
     cache: false
